@@ -70,7 +70,6 @@ func monitorarSite(site string) {
 
 func criarSitesSlice() []string {
 	sites := lerSitesDoArquivo()
-	sites = append(sites, "https://www.udemy.com")
 	return sites
 }
 
@@ -87,12 +86,8 @@ func lerSitesDoArquivo() []string {
 
 	for {
 		linha, err := leitor.ReadString('\n')
-
-		if err != nil {
-			break
-		}
-
 		linha = strings.TrimSpace(linha)
+
 		sites = append(sites, linha)
 
 		if err == io.EOF {
