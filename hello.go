@@ -1,9 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -66,7 +69,38 @@ func monitorarSite(site string) {
 }
 
 func criarSitesSlice() []string {
-	sites := []string{"https://www.alura.com.br", "https://www.google.com.br", "https://www.github.com", "https://www.stackoverflow.com"}
+	sites := lerSitesDoArquivo()
 	sites = append(sites, "https://www.udemy.com")
+	return sites
+}
+
+func lerSitesDoArquivo() []string {
+	var sites []string
+	arquivo, err := os.Open("sites.txt")
+
+	if err != nil {
+		fmt.Println("Ocorreu um erro ao abrir o arquivo:", err)
+		return sites
+	}
+
+	leitor := bufio.NewReader(arquivo)
+
+	for {
+		linha, err := leitor.ReadString('\n')
+
+		if err != nil {
+			break
+		}
+
+		linha = strings.TrimSpace(linha)
+		sites = append(sites, linha)
+
+		if err == io.EOF {
+			break
+		}
+	}
+
+	arquivo.Close()
+
 	return sites
 }
