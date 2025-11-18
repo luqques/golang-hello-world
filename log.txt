@@ -1,0 +1,5 @@
+https://www.google.com.br - online: true
+https://www.alura.com.br - online: true
+https://www.github.com - online: true
+https://www.stackoverflow.com - online: false
+https://www.udemy.com - online: false
