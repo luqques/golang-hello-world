@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+const delay = 3
+
 func main() {
 	exibeMenu()
 	comando := lerComando()
@@ -46,7 +48,7 @@ func iniciarMonitoramento() {
 
 	for i := range sliceSites {
 		monitorarSite(sliceSites[i])
-		time.Sleep(5 * time.Second)
+		time.Sleep(delay * time.Second)
 	}
 }
 
