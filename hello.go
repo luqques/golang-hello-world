@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
 
 func main() {
@@ -42,10 +43,10 @@ func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
 
 	sliceSites := criarSitesSlice()
-	fmt.Println(sliceSites)
 
 	for i := range sliceSites {
 		monitorarSite(sliceSites[i])
+		time.Sleep(5 * time.Second)
 	}
 }
 
@@ -65,6 +66,5 @@ func monitorarSite(site string) {
 func criarSitesSlice() []string {
 	sites := []string{"https://www.alura.com.br", "https://www.google.com.br", "https://www.github.com", "https://www.stackoverflow.com"}
 	sites = append(sites, "https://www.udemy.com")
-
 	return sites
 }
