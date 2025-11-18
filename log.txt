@@ -1,5 +1,5 @@
-https://www.google.com.br - online: true
-https://www.alura.com.br - online: true
-https://www.github.com - online: true
-https://www.stackoverflow.com - online: false
-https://www.udemy.com - online: false
+17/11/2025 23:46:54 - https://www.google.com.br - online: true
+17/11/2025 23:46:57 - https://www.alura.com.br - online: true
+17/11/2025 23:47:00 - https://www.github.com - online: true
+17/11/2025 23:47:03 - https://www.stackoverflow.com - online: false
+17/11/2025 23:47:06 - https://www.udemy.com - online: false
